@@ -1,0 +1,86 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+tabbox{
+  margin: 0px;
+  background-color: -moz-Dialog;
+}
+
+tabs{
+  background-color: -moz-Field;
+  max-height: 32px;
+  min-height: 32px;
+  padding: 4px 0px 0px 0px;
+}
+
+tab{
+  -moz-appearance: none;
+  width: 180px;
+  margin: 1px 2px;
+  border-radius: 2px;
+  max-height: 24px;
+  min-height: 24px;
+}
+
+tab[disabled=true]{
+  display: none;
+}
+
+
+tab[selected]{
+  border-top: 2px Highlight solid;
+  border-left: 2px Highlight solid;
+  border-bottom: 2px transparent solid;
+  border-right: 2px transparent solid;
+}
+
+tab:not([selected]){
+  margin-bottom: -2px;
+  border-top: 2px transparent solid;
+  border-left: 2px transparent solid;
+  border-bottom: 2px ThreeDShadow solid;
+  border-right: 2px ThreeDShadow solid;
+}
+
+tab:not([selected]):hover {
+  border-top: 2px ThreeDShadow solid;
+  border-left: 2px ThreeDShadow solid;
+  border-bottom: 2px Darkgray dotted;
+  border-right: 2px Darkgray dotted;
+}
+
+tab > label{
+  position: relative;
+  top: 2px;
+  left: 5px;
+  width: 135px;
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+}
+
+tab > label + label{
+  width: 23px;
+  padding: 0px;
+  margin: -2px -5px 1px 15px;
+  text-align: center;
+  border-top: 2px ThreeDShadow solid;
+  border-left: 2px ThreeDShadow solid;
+}
+
+tab[selected] > label + label,
+tab:not([selected]):hover > label + label{
+  opacity: 0;
+}
+
+tab:not([selected]) > label + label{
+  opacity: 1;
+}
+
+tabpanels{
+  -moz-appearance: none;
+  border: none;
+  padding: 0px;
+  height: 300px;
+}
