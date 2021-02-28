@@ -1,0 +1,4 @@
+content protagonist file:chrome/content/
+skin protagonist classic file:chrome/skin/unix/
+skin protagonist classic file:chrome/skin/win/ os=WinNT
+locale protagonist	ja-JP file:chrome/locale/ja-JP/
