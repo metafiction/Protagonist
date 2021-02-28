@@ -1,0 +1,21 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY protagonist.top    "トップ">
+<!ENTITY protagonist.ext1    "所有">
+<!ENTITY protagonist.ext2    "起動">
+<!ENTITY protagonist.ext3    "対象">
+<!ENTITY protagonist.elapsed_time "経過時間">
+<!ENTITY protagonist.second    "秒">
+<!ENTITY protagonist.display "ディスプレイ">
+<!ENTITY protagonist.file "ファイル">
+<!ENTITY protagonist.folder "フォルダ">
+<!ENTITY protagonist.application "アプリケーション">
+<!ENTITY protagonist.tree "ツリー">
+<!ENTITY protagonist.abacus    "アバカス">
+<!ENTITY protagonist.create "作成">
+<!ENTITY protagonist.remove "削除">
+<!ENTITY protagonist.copy "コピー">
+<!ENTITY protagonist.move "移動">
+<!ENTITY protagonist.launch "起動">
