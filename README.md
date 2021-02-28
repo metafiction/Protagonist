@@ -1,6 +1,6 @@
 # Protagonist
 
-XULアプリケーションとして開発されたファイルマネージャであり、Mozilla FirefoxがインストールされたLinux上とWindows上で起動可能となります。
+ファイルマネージャとして開発されたXULアプリケーションであり、Mozilla FirefoxがインストールされたLinux上とWindows上で起動可能となります。
 
 ##version
 ###1.0
