@@ -1,0 +1,41 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.windowroot{
+  min-width: 480px;
+  max-width: 480px;
+  min-height: 270px;
+  max-height: 270px;
+  border: 1px ThreeDShadow solid;
+  background-color: -moz-Field;
+}
+
+.windowpanel{
+  padding: 1px;
+  border: 1px ThreeDShadow solid;
+  background: -moz-linear-gradient(rgb(222,222,222), rgb(130,130,130) 50%);
+}
+
+.windowpanel > label:first-child{
+  padding-left: 5px;
+  margin: 7px 5px 0px 5px;
+  border-bottom: 1px ThreeDShadow solid;
+  background-color: -moz-Dialog;
+}
+
+.windowpanel > label:nth-child(3){
+  padding-right: 5px;
+  margin: 0px 5px 7px 5px;
+  border-bottom: 1px ThreeDShadow solid;
+  background-color: -moz-Dialog;
+  text-align: right;
+}
+
+.windowpanel:hover{
+  border: 1px Highlight solid;
+}
+
+.windowpanel[moving="true"]{
+  border: 2px Highlight dotted;
+}
