@@ -1,0 +1,17 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+:root{
+  min-width: 364px;
+  max-width: 364px;
+}
+
+body{
+  border: 1px ThreeDShadow solid;
+  padding: 0px;
+  margin: 0px;
+  font-weight: bold;
+  color: white;
+  background: -moz-linear-gradient(rgb(222,222,222), rgb(130,130,130) 50%);
+}
