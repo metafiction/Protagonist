@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://protagonist/skin/splash.css" type="text/css"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      windowtype="protagonist:singleton"
+      onkeypress="window.close();"
+      onclick="window.close();"
+      hidechrome="true">
+
+  <head>
+    <script type="text/javascript">
+      window.addEventListener("unload", () => { openDialog("top.xhtml", "", "alwaysRaised,centerscreen"); } );
+    </script>
+  </head>
+
+  <body xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <vbox flex="1" pack="center">
+      <stack>
+        <label value="Protagonist" style="text-align: center; color: transparent; background: transparent; font-size: 54px; font-weight: bold; text-shadow: 0px 0px 1px Highlight, 0px 0px 5px Highlight, 0px 0px 10px Highlight;"/>
+        <label value="Protagonist" style="text-align: center; opacity: 1; color: white; background: transparent; font-size: 54px; font-weight: bold;"/>
+      </stack>
+      <hbox style="padding: 0px 25px 30px 0px;">
+        <spacer flex="1"/>
+        <stack>
+          <label value="Version 1.0" style="text-align: center; color: transparent; background: transparent; font-size: 19px; font-weight: bold; text-shadow: 0px 0px 1px Highlight, 0px 0px 5px Highlight, 0px 0px 10px Highlight;"/>
+          <label value="Version 1.0" style="text-align: center; color: white; background: transparent; font-size: 19px; font-weight: bold;"/>
+        </stack>
+      </hbox>
+      <stack style="margin-bottom: 10px;">
+        <label value="&lt; Press any key to start &gt;" style="text-align: center; color: transparent; background: transparent; font-size: 21px; font-weight: bold; text-shadow: 0px 0px 1px Highlight, 0px 0px 5px Highlight, 0px 0px 10px Highlight;"/>
+        <label value="&lt; Press any key to start &gt;" style="text-align: center; color: white; background: transparent; font-size: 21px; font-weight: bold;"/>
+      </stack>
+      <stack style="margin-bottom: 5px;">
+        <label value="Copyright (c) 2021 Hirofumi Suzaki All rights reserved." style="text-align: center; color: transparent; background: transparent; font-size: 15px; font-weight: bold; text-shadow: 0px 0px 1px Highlight, 0px 0px 5px Highlight, 0px 0px 10px Highlight;"/>
+        <label value="Copyright (c) 2021 Hirofumi Suzaki All rights reserved." style="text-align: center; opacity: 1; color: white; background: transparent; font-size: 15px; font-weight: bold;"/>
+      </stack>
+    </vbox>
+  </body>
+
+</html>
