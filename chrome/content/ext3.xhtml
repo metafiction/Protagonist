@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://protagonist/skin/common.css" type="text/css"?>
+<?xml-stylesheet href="chrome://protagonist/skin/button.css" type="text/css"?>
+<?xml-stylesheet href="chrome://protagonist/skin/tabbox.css" type="text/css"?>
+<?xml-stylesheet href="chrome://protagonist/skin/richlistbox.css" type="text/css"?>
+
+<!DOCTYPE html SYSTEM "chrome://protagonist/locale/global.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <title>Protagonist - &protagonist.ext3; : &protagonist.elapsed_time; [0] &protagonist.second;</title>
+    <script language="javascript" src="ext3.js"/>
+    <script language="javascript" src="common.js"/>
+    <script language="javascript" src="binding.js"/>
+  </head>
+
+  <body xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <broadcasterset>
+      <broadcaster id="timekeeper"/>
+    </broadcasterset>
+
+    <commandset>
+      <command id="pressA" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressG" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressW" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressE" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressR" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressT" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressS" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressD" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressF" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressH" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressJ" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressK" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressL" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressY" oncommand="setBoolPref(MAIN_PREF + id, true);"/>
+      <command id="pressEsc" oncommand="window.close();"/>
+    </commandset>
+
+    <keyset>
+      <key keycode="VK_RETURN" command="pressH"/>
+      <key keycode="VK_UP" command="pressD"/>
+      <key keycode="VK_DOWN" command="pressK"/>
+      <key keycode="VK_PAGE_UP" command="pressF"/>
+      <key keycode="VK_PAGE_DOWN" command="pressJ"/>
+      <key keycode="VK_HOME" command="pressS"/>
+      <key keycode="VK_END" command="pressL"/>
+      <key keycode="VK_F5" command="pressY"/>
+      <key keycode="VK_ESCAPE" command="pressEsc"/>
+      <key key="A" command="pressA"/>
+      <key key="G" command="pressG"/>
+      <key key="W" command="pressW"/>
+      <key key="E" command="pressE"/>
+      <key key="R" command="pressR"/>
+      <key key="T" command="pressT"/>
+      <key key="S" command="pressS"/>
+      <key key="F" command="pressF"/>
+      <key key="D" command="pressD"/>
+      <key key="K" command="pressK"/>
+      <key key="J" command="pressJ"/>
+      <key key="L" command="pressL"/>
+      <key key="H" command="pressH"/>
+      <key key="Y" command="pressY"/>
+    </keyset>
+
+    <vbox flex="1" style="background-color: -moz-Dialog; padding: 0px;">
+      <hbox align="center" style="border-top: 1px ThreeDShadow solid; border-bottom: 1px ThreeDShadow solid; background-color: -moz-Field; margin: 0px;">
+        <hbox align="center" flex="1" style="min-height: 28px;">
+          <image style="height: 24px; width: 24px; margin-left: 15px; margin-right: 8px;">
+            <observes element="timekeeper" attribute="path" onbroadcast="this.parentNode.setAttribute('src', iconPath(timekeeper.path));"/>
+          </image>
+          <hbox style="margin-left: -8px; margin-right: 2px; padding: 0px; margin: 0px;">
+            <button class="climb" key="A" command="pressA"/>
+            <observes element="timekeeper" attribute="path" onbroadcast="this.parentNode.firstChild.firstChild.setAttribute('value',parentPath(timekeeper.path));"/>
+            <spacer class="arrow rit lspace" style="width: 5px; height: 10px;"/>
+            <observes element="timekeeper" attribute="path" onbroadcast="this.parentNode.setAttribute('hidden',isRoot(timekeeper.path));"/>
+          </hbox>
+          <label flex="1">
+            <observes element="timekeeper" attribute="path" onbroadcast="this.parentNode.value = leafName(timekeeper.path);"/>
+          </label>
+          <observes element="timekeeper" attribute="path" onbroadcast="this.parentNode.setAttribute('hidden', !timekeeper.path);"/>
+        </hbox>
+        <spacer flex="1"/>
+        <button class="home" key="G" command="pressG"/>
+        <spacer width="3"/>
+        <observes element="timekeeper" attribute="abacus" onbroadcast="this.parentNode.setAttribute('hidden', timekeeper.node.getAttribute('abacus'));"/>
+      </hbox>
+      <tabbox flex="1">
+        <observes element="timekeeper" attribute="tabIndex"
+                  onbroadcast="this.parentNode.selectedIndex = timekeeper.tabIndex;"/>
+        <tabs>
+          <tab command="pressW" onmousedown="this.doCommand();">
+            <label value="&protagonist.folder;+&protagonist.file;" flex="1"/>
+            <label value="W"/>
+          </tab>
+          <tab command="pressE" key="E" onmousedown="this.doCommand();">
+            <label value="&protagonist.folder;" flex="1"/>
+            <label value="E"/>
+          </tab>
+          <tab command="pressR" key="R" onmousedown="this.doCommand();">
+            <label value="&protagonist.file;" flex="1"/>
+            <label value="R"/>
+          </tab>
+          <tab command="pressT" key="T" onmousedown="this.doCommand();">
+            <label value="&protagonist.tree;" flex="1"/>
+            <label value="T"/>
+          </tab>
+          <spacer flex="1000"/>
+          <observes element="timekeeper" attribute="abacus" onbroadcast="this.parentNode.setAttribute('hidden', timekeeper.node.getAttribute('abacus'));"/>
+        </tabs>
+        <tabpanels style=" border-top: 1px ThreeDShadow solid;">
+          <tabpanel>
+            <richlistbox flex="1"/>
+            <observes element="timekeeper" attribute="path" onbroadcast="this.parentNode.firstChild.clear();"/>
+            <observes element="timekeeper" attribute="tabIndex" onbroadcast="if(timekeeper.tabIndex == 0)timekeeper.list = this.parentNode.firstChild;"/>
+          </tabpanel>
+          <tabpanel>
+            <richlistbox flex="1"/>
+            <observes element="timekeeper" attribute="path" onbroadcast="this.parentNode.firstChild.clear();"/>
+            <observes element="timekeeper" attribute="tabIndex" onbroadcast="if(timekeeper.tabIndex == 1)timekeeper.list = this.parentNode.firstChild;"/>
+          </tabpanel>
+          <tabpanel>
+            <richlistbox flex="1"/>
+            <observes element="timekeeper" attribute="path" onbroadcast="this.parentNode.firstChild.clear();"/>
+            <observes element="timekeeper" attribute="tabIndex" onbroadcast="if(timekeeper.tabIndex == 2)timekeeper.list = this.parentNode.firstChild;"/>
+          </tabpanel>
+          <tabpanel>
+            <richlistbox flex="1"/>
+            <observes element="timekeeper" attribute="path" onbroadcast="this.parentNode.firstChild.clear();"/>
+            <observes element="timekeeper" attribute="tabIndex" onbroadcast="if(timekeeper.tabIndex == 3)timekeeper.list = this.parentNode.firstChild;"/>
+          </tabpanel>
+        </tabpanels>
+      </tabbox>
+
+      <hbox flex="1" style="padding: 1px 0px; border-top: 1px ThreeDShadow solid; min-height: 28px;">
+        <spacer width="3"/>
+        <button class="firstview" key="S" command="pressS"/>
+        <spacer width="3"/>
+        <button class="previousview" key="F" command="pressF"/>
+        <spacer width="3"/>
+        <button class="previousitem" key="D" command="pressD"/>
+        <spacer width="3"/>
+        <button class="nextitem" key="K" command="pressK"/>
+        <spacer width="3"/>
+        <button class="nextview" key="J" command="pressJ"/>
+        <spacer width="3"/>
+        <button class="lastview" key="L" command="pressL"/>
+        <spacer width="3"/>
+        <button class="enter" key="H" command="pressH"/>
+        <spacer flex="1"/>
+        <button class="reload" key="Y" command="pressY"/>
+        <spacer width="3"/>
+        <button class="close" key="Esc" command="pressEsc"/>
+        <spacer width="3"/>
+        <observes element="timekeeper" attribute="abacus" onbroadcast="this.parentNode.setAttribute('hidden', timekeeper.node.getAttribute('abacus'));"/>
+      </hbox>
+
+    </vbox>
+  </body>
+
+</html>
