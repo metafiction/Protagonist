@@ -1,0 +1,82 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+button.plain{
+  -moz-appearance: button;
+}
+
+button{
+  padding: 0px;
+  margin: 0px;
+  min-width: 40px;
+}
+
+button .enter{
+  margin-right: -1px;
+  margin-top: -2px;
+}
+
+button label{
+  max-height: 16px;
+}
+
+button[disabled="true"] spacer,
+button[disabled="true"] label{
+  opacity: 0;
+}
+
+button.plain > hbox > label:last-child{
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  width: 20px;
+  border: 1px Darkgray solid;
+  background-color: -moz-Field;
+  border-radius: 1px;
+}
+
+button.firstview > *:first-child > spacer:last-child,
+button.lastview > *:last-child > spacer:last-child{
+  border-bottom: 2px solid;
+  margin: 1px 0px;
+}
+
+button.firstview > *:first-child,
+button.previousview > *:first-child,
+button.previousitem > *:first-child{
+  padding: 5px;
+  transform: rotate(180deg);
+}
+
+button.lastview > *:last-child,
+button.nextview > *:last-child,
+button.nextitem > *:last-child{
+  padding: 5px;
+}
+
+button.firstview > *:last-child,
+button.previousview > *:last-child,
+button.previousitem > *:last-child,
+button.lastview > *:first-child,
+button.nextview > *:first-child,
+button.nextitem > *:first-child{
+  margin: 0px 2px;
+}
+
+button > label:not([path]):not([key]){
+  padding: 0px 5px;
+  border: 1px Darkgray solid;
+  border-radius: 2px;
+  margin: 0px;
+  background: -moz-Field;
+}
+
+button.firstview,
+button.previousview,
+button.previousitem,
+button.nextitem,
+button.nextview,
+button.lastview{
+  max-width: 70px;
+}
