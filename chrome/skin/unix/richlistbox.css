@@ -1,0 +1,94 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+richlistbox{
+  -moz-appearance: none;
+  margin: 10px;
+  background-color: -moz-Dialog;
+  border: none;
+  min-height: 280px;
+  max-height: 280px;
+}
+
+richlistitem{
+  height: 40px;
+}
+
+richlistitem[selected]{
+  -moz-appearance: button;
+  border: 2px ThreeDShadow solid;
+}
+
+richlistitem:not([selected]){
+  border: 1px transparent solid;
+}
+
+richlistitem > hbox{
+  background-color: -moz-Field;
+  border: 1px ThreeDShadow solid;
+  border-radius: 3px;
+  margin-left: 3px;
+}
+
+richlistitem[selected] > hbox{
+  border: 1px Highlight solid;
+  border-radius: 2px;
+  margin: 2px;
+}
+
+richlistitem:hover[selected] > hbox{
+}
+
+richlistitem:hover:not([selected]) > hbox{
+  padding: 0px 2px;
+}
+
+richlistitem[background]:not([selected]) > hbox{
+  background-color: Darkgray;
+  opacity: 0.75;
+}
+
+richlistitem > hbox > label{
+  opacity: 0;
+}
+
+richlistitem > hbox > image[top]{
+  opacity: 0;
+}
+
+richlistitem[selected] > hbox > image[top],
+richlistitem:hover > hbox > image[top],
+richlistitem > hbox > image{
+  opacity: 1;
+}
+
+richlistitem[selected] > hbox > label,
+richlistitem[selected] > hbox > image,
+richlistitem:hover > hbox > label,
+richlistitem:hover > hbox > image{
+  opacity: 1;
+}
+
+richlistitem > hbox > spacer{
+  height: 20px;
+  width: 6px;
+  margin-right: 4px;
+  background-color: -moz-Dialog;
+  border: 1px ThreeDShadow solid;
+  border-radius: 1px;
+}
+
+richlistitem[background] > hbox > spacer{
+  background-color: -moz-Field;
+}
+
+richlistitem[selected] > hbox > spacer,
+richlistitem:hover > hbox > spacer{
+  display: none;
+}
+
+richlistitem:not([selected]):hover > hbox > hbox > label:not([marked]){
+  background-color: hsl(210,85%,90%);
+  border-bottom: 1px Highlight dotted;
+}
